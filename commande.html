@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Commande</title>
+</head>
+<body>
+
+    <h1>Formulaire de Commande, à remplir avec amour ♥</h1>
+
+    <form action="/submit-command" method="POST">
+
+        <fieldset>
+            <legend><h2>Informations du Client</h2></legend>
+            
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required minlength="2" placeholder="Entrez votre nom">
+            <br><br>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required minlength="2" placeholder="Entrez votre prénom">
+            <br><br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required placeholder="Entrez votre email">
+            <br><br>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" required pattern="[0-9]{10}" placeholder="Ex : 0123456789">
+            <br><br>
+
+            <label for="adresse">Adresse de livraison :</label>
+            <input type="text" id="adresse" name="adresse" required placeholder="Entrez votre adresse">
+            <br><br>
+
+            <label for="livraison">Mode de livraison :</label>
+            <select id="livraison" name="livraison" required>
+                <option value="standard">Standard</option>
+                <option value="expresse">Expresse</option>
+            </select>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Détails de la commande</h2></legend>
+
+            <label for="produit">Choix du produit :</label>
+            <select id="produit" name="produit" required>
+                <option value="casque_bluetooth">Casque Bluetooth</option>
+                <option value="clavier_mecanique">Clavier Mécanique</option>
+                <option value="souris_gaming">Souris Gaming</option>
+            </select>
+            <br><br>
+
+            <label for="quantite">Quantité :</label>
+            <input type="number" id="quantite" name="quantite" required min="1" max="8" placeholder="Quantité (1 à 8)">
+            <br><br>
+
+            <label for="couleur">Couleur du produit :</label>
+            <select id="couleur" name="couleur" required>
+                <option value="noir">Noir</option>
+                <option value="blanc">Blanc</option>
+                <option value="rouge">Rouge</option>
+            </select>
+            <br><br>
+
+            <label>Options supplémentaires :</label><br>
+            <input type="checkbox" id="emballage" name="options[]" value="emballage_gift">
+            <label for="emballage">Emballage cadeau</label><br>
+            <input type="checkbox" id="extension" name="options[]" value="extension_garantie">
+            <label for="extension">Extension de garantie</label><br><br>
+
+        </fieldset>
+        
+         <label for="dateLivraison">Date de livraison souhaitée :</label>
+         <input type="date" id="dateLivraison" name="dateLivraison" required min="" placeholder="Sélectionnez une date">
+         <br><br>
+     </fieldset>
+     <fieldset>
+        <legend><h2>Soumission et Paiement</h2></legend>
+
+        <label>Choisissez une méthode de paiement :</label><br>
+        <input type="radio" id="carte_credit" name="paiement" value="carte_credit" required>
+        <label for="carte_credit">Carte de crédit</label><br>
+        <input type="radio" id="paypal" name="paiement" value="paypal" required>
+        <label for="paypal">PayPal</label><br>
+        <input type="radio" id="virement_bancaire" name="paiement" value="virement_bancaire" required>
+        <label for="virement_bancaire">Virement bancaire</label><br><br>
+        <input type="radio" id="En Amour♥" name="paiement" value="En Amour♥" required>
+        <label for="En Amour♥">En Amour de la nature♥</label><br>
+        <input type="checkbox" id="conditions" name="conditions" required>
+        <label for="conditions">J'accepte les <a href="/conditions" target="_blank">conditions générales</a></label>
+        <br><br>
+ 
+    </fieldset>
+    <button type="reset">Réinitialiser le formulaire</button>  
+    <button type="submit">Passer la commande</button>
+
+    </form>
+
+</body>
+</html>
